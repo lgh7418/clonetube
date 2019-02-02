@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();   // .env 파일 안의 정보를 불러오는 함수
 
 mongoose.connect(
-    "mongodb://localhost:27017/we-tube",
+    process.env.MONGO_URL,
     {
         useNewUrlParser: true,
         useFindAndModify: false
